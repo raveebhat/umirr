@@ -4,21 +4,21 @@ require 'nokogiri'
 require 'progressbar'
 
 class Udacity
-	def parseLink(links)
-	  urlArray = []
-	  for i in links
-		urlArray.push(i) if i =~ /^http:\/\/www\.youtube\.com/
-	  end
-	  urlArray
+    def parseLink(links)
+        urlArray = []
+            for i in links
+	        urlArray.push(i) if i =~ /^http:\/\/www\.youtube\.com/
+	    end
+	urlArray
+    end
+    def httpsLink(links)
+        urlArray = []
+        for i in links
+            i.sub!(/^(http:)/,'https:')
+	    urlArray.push(i) 
 	end
-	def httpsLink(links)
-	  urlArray = []
-	  for i in links
-		i.sub!(/^(http:)/,'https:')
-		urlArray.push(i) 
-	  end
-	  urlArray
-	end
+	urlArray
+    end
     def ydownloader(vidurl)
 	  youtubepath = vidurl
 	  uri = URI.parse(youtubepath)
@@ -47,7 +47,7 @@ class Udacity
 	# Main script
 	puts "Enter mirror URL"
 	str = gets.chomp
-    page = Nokogiri::HTML(open(str))
+        page = Nokogiri::HTML(open(str))
 	links = []
 	linkshash = page.css('a')
 	  for i in linkshash
