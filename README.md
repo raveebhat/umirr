@@ -10,5 +10,5 @@ Downloads Youtube videos available in udacity.com unit by unit.
    for eg, https://sites.google.com/site/udacitymirrorcs101/cs-101/unit-1
 
 Wait for the downloads to be finished!!
-- Raveendra Forked
+- Raveendra
 
