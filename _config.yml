@@ -1,0 +1,8 @@
+title: Umirr
+description: Downloads Youtube videos available in udacity.com unit by unit.
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
